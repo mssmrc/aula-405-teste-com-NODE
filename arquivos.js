@@ -2,7 +2,7 @@ const fs = require("fs");
 
 let texto;
 
-fs.readFile('teste.txt', function(erro, sucesso){
+fs.readFile('pessoas.txt', function(erro, sucesso){
     if(erro){
         console.log("IHH, RAPAZ, DEU ERRADO");
         console.log(erro);        
@@ -15,11 +15,12 @@ fs.readFile('teste.txt', function(erro, sucesso){
     }
 });
 
-let paraEscrever = process.argv[2];
+let escreverDados
+escreverDados= process.argv[2] [process.argv[3]];
 
 // Para gravar sempre UM NOVO ARQUIVO (sobrescrever) usar fs.writeFile
 
-fs.appendFile('testeEscrita.txt', `${paraEscrever}\r\n`, erro => {
+fs.appendFile('pessoas.txt', `${escreverDados}`, erro => {
     if(erro){
         console.log("ERRO AO ESCREVER O ARQUIVO");
     }
